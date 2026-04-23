@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lily Studio Gifts — Custom Laser Cut Gifts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #FAF6F0;
+      --warm-bg:    #F3EBE0;
+      --sand:       #E5D8C8;
+      --terracotta: #C4714A;
+      --terra-dk:   #9A4F2F;
+      --wood:       #7A4F2D;
+      --bark:       #4A3020;
+      --sage:       #7A8C6A;
+      --muted:      #8A7A6A;
+      --text:       #2E1F0F;
+      --gold:       #C9A84C;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--cream); border-bottom: 1px solid var(--sand);
+      padding: 1.1rem 5rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; color: var(--wood); letter-spacing: 0.04em;
+    }
+    .nav-logo span { color: var(--terracotta); font-style: italic; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a {
+      text-decoration: none; font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--terracotta); }
+    .nav-cta {
+      background: var(--terracotta) !important; color: #fff !important;
+      padding: 0.5rem 1.4rem; border-radius: 2px;
+    }
+    .nav-cta:hover { background: var(--terra-dk) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 92vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+    .hero-text {
+      padding: 6rem 4rem 6rem 5rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--warm-bg); border: 1px solid var(--sand);
+      padding: 0.4rem 1rem; border-radius: 30px;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--terracotta);
+      margin-bottom: 2rem; width: fit-content;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 4.8rem);
+      line-height: 1.1; color: var(--bark); margin-bottom: 1.5rem;
+    }
+    .hero-title em { color: var(--terracotta); font-style: italic; }
+    .hero-sub {
+      font-size: 1rem; color: var(--muted); font-weight: 300;
+      max-width: 400px; margin-bottom: 2.5rem; line-height: 1.85;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 0.8rem 2rem;
+      background: var(--terracotta); color: #fff;
+      text-decoration: none; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border-radius: 2px; border: 1.5px solid var(--terracotta);
+      transition: all 0.2s; cursor: pointer; font-family: 'Jost', sans-serif;
+    }
+    .btn:hover { background: var(--terra-dk); border-color: var(--terra-dk); }
+    .btn-outline {
+      background: transparent; color: var(--terracotta);
+    }
+    .btn-outline:hover { background: var(--terracotta); color: #fff; }
+    .hero-trust {
+      margin-top: 3rem; display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+    .trust-item { display: flex; align-items: center; gap: 0.5rem; }
+    .trust-icon { font-size: 1rem; }
+    .trust-text { font-size: 0.78rem; color: var(--muted); font-weight: 400; }
+
+    .hero-visual {
+      background: var(--warm-bg);
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr; gap: 3px;
+    }
+    .hv-cell { overflow: hidden; background: var(--sand); position: relative; }
+    .hv-cell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s; }
+    .hv-cell:hover img { transform: scale(1.04); }
+    .hv-cell.ph { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.4rem; }
+    .hv-cell.ph span { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+    /* ── SECTION SHARED ── */
+    .section-wrap { padding: 6rem 5rem; }
+    .section-wrap.alt { background: var(--warm-bg); }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); color: var(--bark); margin-bottom: 0.8rem; }
+    .section-desc { font-size: 0.95rem; color: var(--muted); font-weight: 300; max-width: 520px; line-height: 1.85; margin-bottom: 3.5rem; }
+    .divider { width: 44px; height: 2px; background: var(--terracotta); margin: 1rem 0 1.8rem; }
+
+    /* ── PRODUCTS ── */
+    .products-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2px;
+    }
+    .product-card { background: var(--cream); overflow: hidden; }
+    .product-thumb {
+      aspect-ratio: 4/3; overflow: hidden; background: var(--sand);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .product-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+    .product-card:hover .product-thumb img { transform: scale(1.05); }
+    .product-thumb .ph-big { font-size: 2.5rem; opacity: 0.2; }
+    .product-body { padding: 1.5rem; }
+    .product-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--bark); margin-bottom: 0.3rem; }
+    .product-desc { font-size: 0.85rem; color: var(--muted); font-weight: 300; line-height: 1.65; margin-bottom: 1rem; }
+    .product-note { font-size: 0.75rem; color: var(--sage); font-weight: 500; font-style: italic; margin-bottom: 1rem; }
+    .product-footer { display: flex; justify-content: space-between; align-items: center; }
+    .product-price { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--terracotta); font-weight: 600; }
+    .order-btn {
+      padding: 0.4rem 1.1rem; background: transparent;
+      border: 1.5px solid var(--terracotta); color: var(--terracotta);
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; border-radius: 2px; cursor: pointer;
+      font-family: 'Jost', sans-serif; transition: all 0.2s; text-decoration: none;
+      display: inline-block;
+    }
+    .order-btn:hover { background: var(--terracotta); color: #fff; }
+
+    /* ── HOW IT WORKS ── */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 3rem; }
+    .step { background: var(--cream); padding: 2rem 1.8rem; position: relative; }
+    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--sand); line-height: 1; margin-bottom: 0.8rem; }
+    .step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--bark); margin-bottom: 0.5rem; }
+    .step-body { font-size: 0.82rem; color: var(--muted); font-weight: 300; line-height: 1.65; }
+
+    /* ── OCCASIONS ── */
+    .occasions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 3rem; }
+    .occasion-card { background: var(--cream); padding: 2rem; text-align: center; }
+    .occasion-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .occasion-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--bark); margin-bottom: 0.5rem; }
+    .occasion-desc { font-size: 0.82rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
+
+    /* ── CONTACT FORM ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-info { }
+    .contact-channels { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+    .channel { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.2rem; background: var(--cream); border-radius: 2px; text-decoration: none; transition: background 0.2s; }
+    .channel:hover { background: var(--sand); }
+    .channel-icon { font-size: 1.2rem; width: 2rem; text-align: center; }
+    .channel-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); }
+    .channel-val { font-size: 0.9rem; color: var(--bark); font-weight: 400; }
+    .form-wrap { }
+    .form-row { margin-bottom: 1.2rem; }
+    .form-row label { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+    .form-row input, .form-row select, .form-row textarea {
+      width: 100%; padding: 0.75rem 1rem;
+      background: var(--cream); border: 1.5px solid var(--sand);
+      border-radius: 2px; font-family: 'Jost', sans-serif;
+      font-size: 0.9rem; color: var(--text); outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--terracotta); }
+    .form-row textarea { resize: vertical; min-height: 120px; }
+    .form-note { font-size: 0.78rem; color: var(--muted); font-weight: 300; margin-top: 0.8rem; font-style: italic; }
+    .success-msg { display: none; padding: 1rem 1.2rem; background: #F0F7EC; border-left: 3px solid var(--sage); font-size: 0.9rem; color: var(--bark); margin-top: 1rem; border-radius: 0 2px 2px 0; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--bark); color: rgba(255,255,255,0.55); padding: 3rem 5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #fff; }
+    .footer-logo span { color: var(--terracotta); font-style: italic; }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: 0.78rem; }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-visual { height: 60vw; }
+      .hero-text { padding: 3rem 1.5rem; }
+      .section-wrap { padding: 4rem 1.5rem; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .occasions-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">Lily Studio <span>Gifts</span></span>
+  <ul class="nav-links">
+    <li><a href="#products">Shop</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#occasions">Occasions</a></li>
+    <li><a href="#order" class="nav-cta">Order Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">✦ Handmade in Boston</div>
+    <h1 class="hero-title">
+      Custom gifts,<br/><em>made with</em><br/>heart & laser.
+    </h1>
+    <p class="hero-sub">
+      Personalized laser-cut wooden gifts for every occasion —
+      birthdays, weddings, holidays, and everything in between.
+      Each piece is made to order, just for you.
+    </p>
+    <div class="hero-btns">
+      <a href="#products" class="btn">See Products</a>
+      <a href="#order" class="btn btn-outline">Place an Order</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">
+        <span class="trust-icon">🪵</span>
+        <span class="trust-text">Real wood & glass</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">✂️</span>
+        <span class="trust-text">Laser precision</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🎁</span>
+        <span class="trust-text">Made to order</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">📍</span>
+        <span class="trust-text">Boston, MA</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hv-cell">
+      <img src="images/IMG_4758.jpg" alt="Charcuterie board"/>
+    </div>
+    <div class="hv-cell">
+      <img src="images/IMG_5432.jpg" alt="Wooden lantern"/>
+    </div>
+    <div class="hv-cell">
+      <img src="images/IMG_4757.jpg" alt="Wooden coasters"/>
+    </div>
+    <div class="hv-cell">
+      <img src="images/IMG_5735.jpg" alt="Engraved box"/>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="section-wrap alt">
+  <p class="section-label">What I Make</p>
+  <h2 class="section-title">Custom Gift Menu</h2>
+  <div class="divider"></div>
+  <p class="section-desc">Every item is laser-engraved to order. Send me your name, date, quote, or design idea — I'll bring it to life.</p>
+
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="product-thumb">
+        <img src="images/IMG_4757.jpg" alt="Wooden Coasters"/>
+      </div>
+      <div class="product-body">
+        <h3 class="product-name">Wooden Coasters</h3>
+        <p class="product-desc">Laser-engraved birch coasters with your custom design, monogram, or pattern. Smooth-finished and ready to gift.</p>
+        <div class="product-footer">
+          <span class="product-price">$5 each · $18 / set of 4</span>
+          <a href="#order" class="order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-thumb">
+        <img src="images/IMG_4758.jpg" alt="Charcuterie Board"/>
+      </div>
+      <div class="product-body">
+        <h3 class="product-name">Charcuterie Board</h3>
+        <p class="product-desc">Custom laser-engraved hardwood charcuterie board — perfect wedding gift, housewarming, or family keepsake. Food-safe finish.</p>
+        <div class="product-footer">
+          <span class="product-price">$20</span>
+          <a href="#order" class="order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-thumb">
+        <img src="images/IMG_5735.jpg" alt="Engraved Box"/>
+      </div>
+      <div class="product-body">
+        <h3 class="product-name">Engraved Box</h3>
+        <p class="product-desc">Bring your own box and I'll engrave it with a custom design — names, dates, illustrations, or meaningful quotes.</p>
+        <p class="product-note">✦ Customer provides the box</p>
+        <div class="product-footer">
+          <span class="product-price">$15</span>
+          <a href="#order" class="order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-thumb">
+        <img src="images/IMG_5432.jpg" alt="Wooden Lantern"/>
+      </div>
+      <div class="product-body">
+        <h3 class="product-name">Wooden Lantern</h3>
+        <p class="product-desc">Geometric laser-cut wooden lantern — casts beautiful shadow patterns when lit. A stunning centerpiece or gift.</p>
+        <div class="product-footer">
+          <span class="product-price">$35</span>
+          <a href="#order" class="order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-thumb">
+        <img src="images/IMG_4222.jpg" alt="Engraved Glass Cup"/>
+      </div>
+      <div class="product-body">
+        <h3 class="product-name">Engraved Glass or Bottle</h3>
+        <p class="product-desc">Custom laser engraving on your glass cup or water bottle — names, logos, or artwork etched permanently into the surface.</p>
+        <p class="product-note">✦ Customer provides the glass or bottle</p>
+        <div class="product-footer">
+          <span class="product-price">$15</span>
+          <a href="#order" class="order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-thumb">
+        <img src="images/IMG_5431.jpg" alt="Custom Signs"/>
+      </div>
+      <div class="product-body">
+        <h3 class="product-name">Custom Signs & More</h3>
+        <p class="product-desc">Personalized name signs, word art, custom shapes, and more. Price depends on size and complexity — let's chat!</p>
+        <div class="product-footer">
+          <span class="product-price">$10 – $20</span>
+          <a href="#order" class="order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="section-wrap">
+  <p class="section-label">The Process</p>
+  <h2 class="section-title">How It Works</h2>
+  <div class="divider"></div>
+  <p class="section-desc">Ordering a custom gift is simple. Here's what to expect from start to finish.</p>
+  <div class="steps">
+    <div class="step">
+      <p class="step-num">01</p>
+      <h3 class="step-title">Send Your Order</h3>
+      <p class="step-body">Fill out the order form below or reach out via Instagram, WhatsApp, or email. Tell me what you'd like, any names or dates, and your occasion.</p>
+    </div>
+    <div class="step">
+      <p class="step-num">02</p>
+      <h3 class="step-title">Design Approval</h3>
+      <p class="step-body">I'll send you a design preview before cutting. We can tweak fonts, layouts, and details until it's exactly right.</p>
+    </div>
+    <div class="step">
+      <p class="step-num">03</p>
+      <h3 class="step-title">Made to Order</h3>
+      <p class="step-body">Once approved, I laser-cut and engrave your piece at Northeastern's MakerSpace. Most orders are ready within 3–5 days.</p>
+    </div>
+    <div class="step">
+      <p class="step-num">04</p>
+      <h3 class="step-title">Pickup or Delivery</h3>
+      <p class="step-body">Pick up in Boston or arrange local delivery. Your gift arrives wrapped and ready to give.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OCCASIONS -->
+<section id="occasions" class="section-wrap alt">
+  <p class="section-label">Perfect For</p>
+  <h2 class="section-title">Every Occasion</h2>
+  <div class="divider"></div>
+  <div class="occasions-grid">
+    <div class="occasion-card">
+      <span class="occasion-icon">💍</span>
+      <h3 class="occasion-title">Weddings</h3>
+      <p class="occasion-desc">Engraved charcuterie boards, personalized coaster sets, and custom signs make unforgettable wedding gifts.</p>
+    </div>
+    <div class="occasion-card">
+      <span class="occasion-icon">🎂</span>
+      <h3 class="occasion-title">Birthdays</h3>
+      <p class="occasion-desc">A personalized engraved gift shows you put real thought into it — perfect for milestone birthdays.</p>
+    </div>
+    <div class="occasion-card">
+      <span class="occasion-icon">🏠</span>
+      <h3 class="occasion-title">Housewarming</h3>
+      <p class="occasion-desc">Custom coasters, lanterns, or a charcuterie board engraved with their family name — a gift they'll keep forever.</p>
+    </div>
+    <div class="occasion-card">
+      <span class="occasion-icon">🎄</span>
+      <h3 class="occasion-title">Holidays</h3>
+      <p class="occasion-desc">Thoughtful, handmade holiday gifts that stand out from anything you'd find in a store.</p>
+    </div>
+    <div class="occasion-card">
+      <span class="occasion-icon">🎓</span>
+      <h3 class="occasion-title">Graduation</h3>
+      <p class="occasion-desc">Celebrate their milestone with a keepsake engraved with their name, year, and achievement.</p>
+    </div>
+    <div class="occasion-card">
+      <span class="occasion-icon">💝</span>
+      <h3 class="occasion-title">Just Because</h3>
+      <p class="occasion-desc">The best gifts don't need a reason. A custom piece made just for someone says everything.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER / CONTACT -->
+<section id="order" class="section-wrap">
+  <p class="section-label">Get in Touch</p>
+  <h2 class="section-title">Place an Order</h2>
+  <div class="divider"></div>
+  <div class="contact-grid">
+
+    <div class="contact-info">
+      <p class="section-desc" style="margin-bottom:2rem;">Ready to order or have a question? Reach out through any of these channels — I usually respond within 24 hours.</p>
+      <div class="contact-channels">
+        <a class="channel" href="mailto:tran.nhi2@northeastern.edu">
+          <span class="channel-icon">✉️</span>
+          <div>
+            <p class="channel-label">Email</p>
+            <p class="channel-val">tran.nhi2@northeastern.edu</p>
+          </div>
+        </a>
+        <a class="channel" href="https://instagram.com/littlelil22" target="_blank">
+          <span class="channel-icon">📸</span>
+          <div>
+            <p class="channel-label">Instagram</p>
+            <p class="channel-val">@littlelil22</p>
+          </div>
+        </a>
+        <a class="channel" href="https://wa.me/19498807221" target="_blank">
+          <span class="channel-icon">💬</span>
+          <div>
+            <p class="channel-label">WhatsApp</p>
+            <p class="channel-val">+1 (949) 880-7221</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="form-wrap">
+      <div class="form-row">
+        <label>Your Name</label>
+        <input type="text" id="f-name" placeholder="e.g. Sarah Kim"/>
+      </div>
+      <div class="form-row">
+        <label>Email Address</label>
+        <input type="email" id="f-email" placeholder="your@email.com"/>
+      </div>
+      <div class="form-row">
+        <label>Product</label>
+        <select id="f-product">
+          <option value="">Select a product...</option>
+          <option>Wooden Coasters — $5 each / $18 set of 4</option>
+          <option>Charcuterie Board — $20</option>
+          <option>Engraved Box — $15 (I'll bring my own box)</option>
+          <option>Wooden Lantern — $35</option>
+          <option>Engraved Glass or Bottle — $15 (I'll bring my own)</option>
+          <option>Custom Sign — $10–$20</option>
+          <option>Not sure — I'd like to discuss</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Occasion</label>
+        <input type="text" id="f-occasion" placeholder="e.g. Wedding gift, birthday, housewarming..."/>
+      </div>
+      <div class="form-row">
+        <label>Your Custom Message or Design Idea</label>
+        <textarea id="f-message" placeholder="Tell me any names, dates, quotes, or design ideas you have in mind..."></textarea>
+      </div>
+      <button class="btn" onclick="submitForm()" style="width:100%;">Send My Order Request</button>
+      <p class="form-note">I'll get back to you within 24 hours with a design preview and next steps.</p>
+      <div class="success-msg" id="successMsg">
+        🎉 Thank you! Your order request has been sent. I'll be in touch within 24 hours.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Lily Studio <span>Gifts</span></span>
+  <div class="footer-links">
+    <a href="#products">Shop</a>
+    <a href="#how-it-works">Process</a>
+    <a href="https://instagram.com/littlelil22" target="_blank">Instagram</a>
+    <a href="https://wa.me/19498807221" target="_blank">WhatsApp</a>
+    <a href="mailto:tran.nhi2@northeastern.edu">Email</a>
+  </div>
+  <p class="footer-copy">© 2026 Lily Studio Gifts · Handmade in Boston, MA</p>
+</footer>
+
+<script>
+  function submitForm() {
+    const name = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const product = document.getElementById('f-product').value;
+    const occasion = document.getElementById('f-occasion').value.trim();
+    const message = document.getElementById('f-message').value.trim();
+
+    if (!name || !email || !product || !message) {
+      alert('Please fill in your name, email, product, and message before sending!');
+      return;
+    }
+
+    const subject = encodeURIComponent(`Order Request — ${product}`);
+    const body = encodeURIComponent(
+      `Hi Lily,\n\nI'd like to place an order!\n\nName: ${name}\nEmail: ${email}\nProduct: ${product}\nOccasion: ${occasion}\n\nDesign idea / message:\n${message}\n\nLooking forward to hearing from you!`
+    );
+
+    window.location.href = `mailto:tran.nhi2@northeastern.edu?subject=${subject}&body=${body}`;
+
+    document.getElementById('successMsg').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
