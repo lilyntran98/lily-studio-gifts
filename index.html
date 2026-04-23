@@ -163,6 +163,7 @@
   <span class="nav-logo">Lily Studio <span>Gifts</span></span>
   <ul class="nav-links">
     <li><a href="#products">Shop</a></li>
+    <li><a href="https://www.etsy.com/shop/LilyStudioGiftsShop" target="_blank">Etsy</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#how-it-works">How It Works</a></li>
     <li><a href="#occasions">Occasions</a></li>
@@ -203,6 +204,18 @@
   <p class="section-desc">Every item is laser-engraved to order. Send me your name, date, quote, or design idea — I'll bring it to life. Click any product to see more photos.</p>
 
   <div class="products-grid">
+
+    <div class="product-card" onclick="openLightbox('Wooden Keychain','Laser Cutting · Wood',['images/keychain.jpg'],'Custom laser-cut and engraved wooden keychains — personalized with names, initials, dates, or your own design. A small but meaningful gift.','$8','✦ Personalization options available','')">
+      <div class="product-thumb">
+        <img src="images/keychain.jpg" alt="Wooden Keychain"/>
+        <span class="product-thumb-hint">Tap to view</span>
+      </div>
+      <div class="product-body">
+        <h3 class="product-name">Wooden Keychain</h3>
+        <p class="product-desc">Laser-cut and engraved wooden keychain — personalized with names, initials, or a custom design.</p>
+        <div class="product-footer"><span class="product-price">$8</span><a href="#order" class="order-btn" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+    </div>
 
     <div class="product-card" onclick="openLightbox('Wooden Bookmarks','Laser Cutting · Bamboo',['images/bookmark.jpg'],'Laser-engraved bamboo bookmarks personalized with names, quotes, or custom illustrations. A sweet and thoughtful gift for any book lover.','$10','','')">
       <div class="product-thumb">
@@ -379,6 +392,10 @@
           <span class="channel-icon">💬</span>
           <div><p class="channel-label">WhatsApp</p><p class="channel-val">+1 (949) 880-7221</p></div>
         </a>
+        <a class="channel" href="https://www.etsy.com/shop/LilyStudioGiftsShop" target="_blank">
+          <span class="channel-icon">🛍️</span>
+          <div><p class="channel-label">Etsy</p><p class="channel-val">LilyStudioGiftsShop</p></div>
+        </a>
       </div>
     </div>
     <div class="form-wrap">
@@ -388,6 +405,7 @@
         <label>Product</label>
         <select id="f-product">
           <option value="">Select a product...</option>
+          <option>Wooden Keychain — $8</option>
           <option>Wooden Bookmarks — $10</option>
           <option>Wooden Coasters — $5 each / $18 set of 4</option>
           <option>Charcuterie Board — $20</option>
@@ -414,6 +432,7 @@
     <a href="#products">Shop</a>
     <a href="#about">About</a>
     <a href="#how-it-works">Process</a>
+    <a href="https://www.etsy.com/shop/LilyStudioGiftsShop" target="_blank">Etsy</a>
     <a href="https://instagram.com/littlelil22" target="_blank">Instagram</a>
     <a href="https://wa.me/19498807221" target="_blank">WhatsApp</a>
     <a href="mailto:tran.nhi2@northeastern.edu">Email</a>
@@ -448,11 +467,9 @@
     document.getElementById('lbDesc').textContent = desc;
     document.getElementById('lbPrice').textContent = price;
     document.getElementById('lbNote').textContent = note;
-
     const mainImg = document.getElementById('lbMainImg');
     mainImg.src = images[0];
     mainImg.alt = title;
-
     const thumbsEl = document.getElementById('lbThumbs');
     thumbsEl.innerHTML = '';
     if (images.length > 1) {
@@ -468,22 +485,17 @@
         thumbsEl.appendChild(div);
       });
     }
-
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
-
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('open');
     document.body.style.overflow = '';
   }
-
   function closeLightboxOutside(e) {
     if (e.target.id === 'lightbox') closeLightbox();
   }
-
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-
   function submitForm() {
     const name = document.getElementById('f-name').value.trim();
     const email = document.getElementById('f-email').value.trim();
