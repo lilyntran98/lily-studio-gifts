@@ -2,7 +2,7 @@
 
 A warm, handcrafted business website for custom laser-cut personalized gifts — made to order in Boston, MA.
 
-**Live site:** `https://lilyntran98.github.io/lily-studio-gifts`
+**Live site:** [https://lilyntran98.github.io/lily-studio-gifts](https://lilyntran98.github.io/lily-studio-gifts)
 
 ---
 
